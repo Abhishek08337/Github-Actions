@@ -1,11 +1,16 @@
-name: Manual Workflow
+name: manual with input
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment Environment"
+        required: true
+        default: "staging"
 jobs:
-  Manual-Work:
+  input:
     runs-on: ubuntu-latest
-    steps:  
-      - name: Message
-        run: echo "This workflow runs on manual dispatch"
-      - name: show date
-        run: date
+    steps:
+      - name: Show Environment
+        run: echo "deploying to ${{inputs.environment}}"
+        
+  
