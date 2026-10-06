@@ -1,0 +1,11 @@
+name: Manual Workflow
+on:
+  workflow_dispatch:
+jobs:
+  Manual-Work:
+    runs-on: ubuntu-latest
+    steps:  
+      - name: Message
+        run: echo "This workflow runs on manual dispatch"
+      - name: show date
+        run: date
