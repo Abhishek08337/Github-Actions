@@ -1,19 +1,22 @@
-name: First
+name: CI
 on:
   push:
 
 jobs:
-  job1:
+  basic-ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: echo "This is build stage"
+      - name: Print
+        run: echo "Starting CI workflow"
 
-      - name: Test
-        run: echo "This is test stage"
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "This is deploy stage"
-      
+      - name: Directory
+        run: pwd
+
+      - name: List Files
+        run: ls-al
+
+      - name: Show os
+        run: uname -a
+
+      - name: CI success
+        run: echo "pipeline successfull"
