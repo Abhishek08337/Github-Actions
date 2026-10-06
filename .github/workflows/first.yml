@@ -2,13 +2,17 @@ name: first workflow
 on:
   push:
 
-    jobs:
-      job1:
-        runs-on: ubuntu:latest
-        steps:
-          step-1:
-            - name: Build
-              run: echo "This is Build Stage"
-          step-2:
-            - name: Test
-              run: echo "This is Test stage"
+jobs:
+    job1:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Build
+            run: echo "This is Build Stage"
+            
+          - name: Test
+            run: echo "This is Test stage"
+    job2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy
+          run: echo "This is deploy stage"        
