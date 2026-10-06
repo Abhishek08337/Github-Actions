@@ -1,0 +1,21 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  multiple-triggers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show username
+        run: uname -a
+      - name: Pipeline success
+        run: echo "Pipeline successful"
