@@ -4,9 +4,8 @@ on:
     paths:
       - 'Web-app/Backend/**'
       - 'Web-app/Frontend/**'
-
-    paths-ignore:   # insted of path-ignore you can you ! in front '!Web-app/documentation/**'  like this
-      - 'Web-app/documentation/**'
+  # insted of path-ignore you can you ! in front '!Web-app/documentation/**'  like this
+      - '!Web-app/documentation/**'
 
 jobs:
   job-1:
