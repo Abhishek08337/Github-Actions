@@ -5,6 +5,7 @@ on:
       environment:
         description: "Deployment Environment"
         required: true
+        type: string      
         default: "staging"
 jobs:
   input:
@@ -12,5 +13,3 @@ jobs:
     steps:
       - name: Show Environment
         run: echo "deploying to ${{ inputs.environment }}"
-        
-  
