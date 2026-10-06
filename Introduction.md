@@ -1,4 +1,4 @@
-# Hi My Name Is Abhi Kadam 👋
+# Hi My Name Is Abhi Kadam 
 
 I Completed My **B.Tech in Computer Science And Engineering** from **Dr. Babasaheb Ambedkar Technological University** in 2026.
 
