@@ -3,6 +3,7 @@ on:
   push:
 
 jobs:
+  job-1:
     runs-on: ubuntu-latest
     steps:
       - name: Print
@@ -12,7 +13,7 @@ jobs:
         run: pwd
 
       - name: List Files
-        run: ls-al
+        run: ls -al
 
       - name: Show os
         run: uname -a
