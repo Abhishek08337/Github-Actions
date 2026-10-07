@@ -1,11 +1,15 @@
-name: scheduled workflow
+name: environment variable
 on:
-  schedule:
-    - cron: '58 13 * * *'
+  workflow_dispatch:
+
+env:
+  APP_NAME: abhi-app-v1
 
 jobs:
-  schedule:
+  checking-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Show name
-        run: echo "Name is Abhi"
+      - name: Starting workflow
+        run: echo "workflow started"
+      - name: Checking application
+        run: echo "Application: ${{ env.APP_NAME }}"
