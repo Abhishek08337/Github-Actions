@@ -1,0 +1,9 @@
+name: Ci
+on:
+  workflow_dispatch:
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: show name
+        run: echo "${{ github.actor }}"
