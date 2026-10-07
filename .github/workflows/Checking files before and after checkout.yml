@@ -17,3 +17,7 @@ jobs:
           git status
           git branch
           git log -1 --oneline
+          echo "$GITHUB_REPOSITORY"
+          echo "$GITHUB_WORKSPACE"
+          echo "$GITHUB_RUN_ID"
+          echo "$GITHUB_REF"
