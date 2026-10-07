@@ -1,0 +1,18 @@
+name: Isolation
+on: 
+  workflow_dispatch:
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creating File
+        run: echo "Hello From Abhi" > message.txt
+      - name: Opening File
+        run: cat message.txt
+
+  job-2:
+    needs: job-1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Opening File from Job-1
+        run: cat message.txt
