@@ -22,3 +22,5 @@ jobs:
           terraform_version: "1.16.5"
       - name: Terraform Version
         run: terraform --version
+      - name: show env
+        run: env
