@@ -1,0 +1,13 @@
+name: checkout demo
+on: 
+  workflow_dispatch:
+jobs:
+  list-files-before:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files before checkout
+        run: ls -la
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: list after checkout
+        run: ls -la
