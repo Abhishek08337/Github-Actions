@@ -1,7 +1,7 @@
 name: multiple variables
 on:
   workflow_dispatch:
-
+# job specific variable
 env:
   APP_NAME: abhi-app-v2
   ENVIRONMENT: TEST
@@ -16,8 +16,18 @@ jobs:
           echo "$APP_NAME"
           echo "$ENVIRONMENT"
           echo "AWS_REGION"
+ 
+  #Step specific variable
   completion:
     runs-on: ubuntu-latest
     steps:
+      - name: deploy stage
+        env:
+          ENVIRONMENT: deploying
+        run: echo "$ENVIRONMENT"
       - name: complete
-        run: echo "Workflow Completed"
+         env:
+          ENVIRONMENT: completion
+        run: |
+          echo "$ENVIRONMENT"
+          echo "Workflow Completed"
