@@ -1,3 +1,5 @@
+# Note The File created in job 1 will not be visible to job 2
+# This is why we use artifacts to share the files between the multiple jobs
 name: Isolation
 on: 
   workflow_dispatch:
@@ -6,13 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Creating File
-        run: echo "Hello From Abhi" > message.txt
+        run: | 
+          echo "Hello From Abhi 
+          we shared this file using artifacts" > message.txt #
+      
       - name: Opening File
         run: cat message.txt
-
+     
+      - name: Sharing file with next job
+        uses: actions/upload-artifact@v4
+        with:
+          name: message from abhi
+          path: message.txt
   job-2:
     needs: job-1
     runs-on: ubuntu-latest
     steps:
+      - name: Downloading artifact from job-1
+        uses: actions/download-artifact@v4
+        with:
+          name: message from abhi
+      
       - name: Opening File from Job-1
         run: cat message.txt
