@@ -1,0 +1,23 @@
+name: runner inspection
+on:
+  workflow_dispatch:
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show Operating System
+        run: uname -a
+
+      - name: Show os info
+        run: cat /etc/os-release
+
+      - name: Show current User
+        run: whoami
+  inspect-directory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list all file
+        run: ls -al
+
+      - name: show current directory
+        run: pwd
