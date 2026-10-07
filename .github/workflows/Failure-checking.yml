@@ -8,7 +8,7 @@ jobs:
       - name: failure
         run: |
              echo "testing failure"
-             exit 1
+             uname -a
   job-2:
     needs: job-1 
     runs-on: ubuntu-latest
