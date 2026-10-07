@@ -12,6 +12,6 @@ jobs:
       - name: Starting workflow
         run: echo "workflow started"
       - name: Checking application
-        run: echo "Application: $APP_NAME"
+        run: echo "Application: ${{ env.APP_NAME }}"
       
   
