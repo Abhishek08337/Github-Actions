@@ -17,11 +17,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show input
+      - name: Show Environment
         run: echo "Environment: ${{ inputs.environment }}"
 
-      - name: Show application
+      - name: Show Application
         run: echo "Application: $APP_NAME"
 
-      - name: Show deployment
+      - name: Show Deployment
         run: echo "Deploying $APP_NAME to ${{ inputs.environment }}"
