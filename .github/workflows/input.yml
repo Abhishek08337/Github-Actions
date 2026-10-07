@@ -1,0 +1,15 @@
+name: input and env 
+on:
+  workflow_dispatch: 
+    inputs:
+      environment:
+        description: "Deployment Environment"
+        required: true
+        default: "Staging"
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: environment input
+        run: echo "Deploying to: ${{ inputs.environment}}"
