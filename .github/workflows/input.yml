@@ -1,18 +1,14 @@
-name: Input Demo
-
+name: input
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        description: "Deployment Environment"
+      abhi:
+        description: "Deploying To"
         required: true
-        default: "Staging"
-        type: string
-
+        default: "abhi-put-something-here"
 jobs:
-  deploy:
+  job-1:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Show Environment
-        run: 'echo "Deploying to: ${{ inputs.environment }}"'
+      - name: env
+        run: 'echo "Deploying To: ${{ inputs.abhi }}"'
