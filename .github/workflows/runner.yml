@@ -21,3 +21,8 @@ jobs:
 
       - name: show current directory
         run: pwd
+  github-workspace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show github workspace
+        run: echo "$GITHUB_WOOKSPACE"
