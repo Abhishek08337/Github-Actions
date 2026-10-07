@@ -1,0 +1,27 @@
+name: Failure Test
+on: 
+  workflow_dispatch: 
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: failure
+        run: |
+             echo "testing failure"
+             exit 1
+  job-2:
+    needs: job-1 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "This is Test phase" 
+  
+  job-3:
+    needs:
+      - job-1
+      - job-2
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: echo "This is deploy stage"
+    
