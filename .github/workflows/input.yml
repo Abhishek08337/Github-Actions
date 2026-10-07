@@ -9,10 +9,19 @@ on:
         default: Staging
         type: string
 
+env:
+  APP_NAME: abhi-app-v1
+
 jobs:
   job-1:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Environment Input
-        run: echo "Deploying to: ${{ inputs.environment }}"
+      - name: Show Input
+        run: echo "Environment: ${{ inputs.environment }}"
+
+      - name: Show Environment Variable
+        run: echo "Application: $APP_NAME"
+
+      - name: Show Both
+        run: echo "Deploying $APP_NAME to ${{ inputs.environment }}"
