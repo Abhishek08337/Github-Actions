@@ -25,4 +25,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: show github workspace
-        run: echo "$GITHUB_WOOKSPACE"
+        run: echo "$GITHUB_WORKSPACE"
