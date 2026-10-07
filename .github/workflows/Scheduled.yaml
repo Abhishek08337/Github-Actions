@@ -9,7 +9,7 @@ jobs:
   checking-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Starting workflow
-        run: echo "workflow started"
       - name: Checking application
         run: echo "Application: ${{ env.APP_NAME }}"
+      - name: Starting workflow
+        run: echo "workflow started"
