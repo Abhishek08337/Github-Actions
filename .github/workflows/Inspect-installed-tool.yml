@@ -1,0 +1,19 @@
+name: inspect installed tools
+on: 
+  workflow_dispatch:
+jobs:
+  checking-installed-tools:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git version
+        run: git --version
+      - name: python version
+        run: python --version
+      - name: Node version
+        run: node --version
+      - name: npm version
+        run: npm --version
+      - name: docker version
+        run: docker --version
+      - name: Terraform Version
+        run: terraform --version
