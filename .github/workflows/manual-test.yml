@@ -1,11 +1,27 @@
-name: Manual Test
+name: Input and Env
 
 "on":
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment Environment"
+        required: true
+        default: "Staging"
+        type: string
+
+env:
+  APP_NAME: "abhi-app-v1"
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Test
-        run: echo "MANUAL WORKFLOW WORKS"
+      - name: Show input
+        run: echo "Environment: ${{ inputs.environment }}"
+
+      - name: Show application
+        run: echo "Application: $APP_NAME"
+
+      - name: Show deployment
+        run: echo "Deploying $APP_NAME to ${{ inputs.environment }}"
