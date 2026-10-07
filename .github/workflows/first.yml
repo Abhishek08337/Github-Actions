@@ -1,22 +1,14 @@
-name: CI
+name: step-output
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
-      - name: Print
-        run: echo "Starting CI workflow"
+      - name: generate version
+        id: version
+        run: echo "version=1.0.0" >> "$GITHUB_OUTPUT"
 
-      - name: Directory
-        run: pwd
-
-      - name: List Files
-        run: ls -al
-
-      - name: Show os
-        run: uname -a
-
-      - name: CI success
-        run: echo "pipeline successfull"
+      - name: show version
+        run: 'echo "version is: ${{ steps.version.outputs.version }}"'
